@@ -269,8 +269,8 @@ async def process_style_transfer(job_id: str, image_path: str, style: str):
         await Database.update_job_status(job_id, "processing")
         
         # Get style image path
-        style_dir = Path(__file__).resolve().parent.parent / "models" / "style_images"
-        style_path = style_dir / f"{style}.jpg"
+        style_dir = Path(__file__).resolve().parent.parent / "models" / "style_images" 
+        style_path = style_dir / f"{style}.jpg" # Loads style.jpg
         
         if not style_path.exists():
             raise FileNotFoundError(f"Style image not found: {style}.jpg")

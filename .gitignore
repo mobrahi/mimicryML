@@ -1,1 +1,27 @@
+# Environments
 .venv/
+venv/
+env/
+.env
+
+# Python Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# TensorFlow / Machine Learning
+tfhub_modules/
+**/tfhub_modules/
+.ipynb_checkpoints/
+*.h5
+*.tflite
+*.pb
+/data/
+/models/
+~/.cache/tfhub_modules/
+
+# OS and IDE
+.DS_Store
+.vscode/
+.idea/
