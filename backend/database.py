@@ -1,5 +1,3 @@
-# backend/database.py
-
 import sqlite3
 import aiosqlite
 from pathlib import Path

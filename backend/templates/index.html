@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mimicryML | AI Style Transfer Studio - API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+            color: #333;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .endpoint {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            margin: 12px 0;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .endpoint:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+        
+        .endpoint strong {
+            color: #667eea;
+            margin-right: 10px;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        .styles {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .style-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .tech-stack {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: #555;
+        }
+        
+        .api-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white !important;
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-size: 1.1em;
+            text-decoration: none !important;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s;
+        }
+        
+        .api-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e9ecef;
+            text-align: center;
+            color: #999;
+            font-size: 0.95em;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 mimicryML | AI Style Transfer</h1>
+        <p class="subtitle">
+            Transform your photos into artistic masterpieces using deep learning and neural style transfer.
+            Built with Python, FastAPI, TensorFlow, and SQLite.
+        </p>
+        
+        <h2>📚 API Documentation</h2>
+        <a href="/docs" class="api-link">
+            📖 Open Interactive API Docs (Swagger UI)
+        </a>
+        
+        <h2>🎨 Available Artistic Styles</h2>
+        <div class="styles">
+            <span class="style-tag">🌌 Van Gogh - Starry Night</span>
+            <span class="style-tag">🎭 Picasso - Cubism</span>
+            <span class="style-tag">🌊 Monet - Impressionism</span>
+            <span class="style-tag">🎨 Kandinsky - Abstract</span>
+        </div>
+        
+        <h2>🚀 Quick Start Guide</h2>
+        <div class="endpoint">
+            <strong>1.</strong> POST /transform?style=vangogh
+            <br><span style="color: #666; font-size: 0.9em;">Upload your image and start transformation</span>
+        </div>
+        <div class="endpoint">
+            <strong>2.</strong> GET /status/{job_id}
+            <br><span style="color: #666; font-size: 0.9em;">Check processing status</span>
+        </div>
+        <div class="endpoint">
+            <strong>3.</strong> GET /result/{job_id}
+            <br><span style="color: #666; font-size: 0.9em;">Download your stylized masterpiece</span>
+        </div>
+        
+        <h2>🔗 Available Endpoints</h2>
+        <div class="endpoint">
+            <strong>GET</strong> <a href="/health">/health</a> - Health check
+        </div>
+        <div class="endpoint">
+            <strong>GET</strong> <a href="/styles">/styles</a> - List all available styles
+        </div>
+        <div class="endpoint">
+            <strong>GET</strong> /history/{session_id} - Get transformation history
+        </div>
+        <div class="endpoint">
+            <strong>GET</strong> <a href="/gallery?limit=10">/gallery</a> - Browse recent transformations
+        </div>
+        
+        <h2>🛠️ Technology Stack</h2>
+        <div class="tech-stack">
+            <strong>Backend:</strong> FastAPI with async support<br>
+            <strong>Database:</strong> SQLite with aiosqlite<br>
+            <strong>ML Framework:</strong> TensorFlow + TensorFlow Hub<br>
+            <strong>Model:</strong> Arbitrary Image Stylization v1-256<br>
+            <strong>Frontend:</strong> Streamlit (coming soon)
+        </div>
+        
+        <h2>✨ Features</h2>
+        <ul style="list-style: none; padding: 0;">
+            <li style="padding: 10px 0;">✅ Neural style transfer with pre-trained models</li>
+            <li style="padding: 10px 0;">✅ Asynchronous background processing</li>
+            <li style="padding: 10px 0;">✅ Job tracking and status monitoring</li>
+            <li style="padding: 10px 0;">✅ Transformation history and gallery</li>
+            <li style="padding: 10px 0;">✅ RESTful API design</li>
+        </ul>
+        
+        <div class="footer">
+            <p>
+                <strong>Status:</strong> 
+                <span class="status-badge">🟢 Running</span>
+            </p>
+            <p style="margin-top: 15px;">
+                Built as a Python Bootcamp JomHack Cohort4 final project<br>
+                © 2026 mimicryML | AI Style Transfer Studio
+            </p>
+        </div>
+    </div>
+</body>
+</html>
