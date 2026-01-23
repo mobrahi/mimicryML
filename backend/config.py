@@ -1,4 +1,8 @@
 from pathlib import Path
+import os
+
+# Example definition
+MODEL_DIR = os.path.join(os.path.dirname(__file__), "models")
 
 # Paths
 BASE_DIR = Path(__file__).resolve().parent.parent

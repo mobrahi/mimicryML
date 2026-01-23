@@ -14,11 +14,9 @@ from style_transfer import StyleTransfer
 from config import MODEL_DIR
 from typing import Optional
 from pydantic import BaseModel
-
-from fastapi import FastAPI, File, UploadFile, HTTPException, BackgroundTasks
-from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
+from fastapi.responses import HTMLResponse
 
 from database import Database
 from config import (
