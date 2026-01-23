@@ -1,5 +1,4 @@
 absl-py==2.3.1
-aiosqlite==0.22.1
 altair==6.0.0
 annotated-doc==0.0.4
 annotated-types==0.7.0
@@ -23,6 +22,7 @@ fastapi==0.128.0
 flatbuffers==25.12.19
 fonttools==4.61.1
 gast==0.7.0
+git-filter-repo==2.47.0
 gitdb==4.0.12
 GitPython==3.1.46
 google-pasta==0.2.0
@@ -40,7 +40,7 @@ jsonschema==4.26.0
 jsonschema-specifications==2025.9.1
 jupyter_client==8.7.0
 jupyter_core==5.9.1
-keras==3.13.1
+keras==3.13.0
 kiwisolver==1.4.9
 libclang==18.1.1
 Markdown==3.10
@@ -54,7 +54,6 @@ namex==0.1.0
 narwhals==2.15.0
 nest-asyncio==1.6.0
 numpy==2.4.0
-opencv-python==4.13.0.90
 opt_einsum==3.4.0
 optree==0.18.0
 packaging==25.0
@@ -75,7 +74,6 @@ pydeck==0.9.1
 Pygments==2.19.2
 pyparsing==3.3.1
 python-dateutil==2.9.0.post0
-python-multipart==0.0.21
 pytz==2025.2
 pyzmq==27.1.0
 referencing==0.37.0
@@ -95,9 +93,7 @@ tenacity==9.1.2
 tensorboard==2.20.0
 tensorboard-data-server==0.7.2
 tensorflow==2.20.0
-tensorflow-hub==0.16.1
 termcolor==3.3.0
-tf_keras==2.20.1
 threadpoolctl==3.6.0
 toml==0.10.2
 tornado==6.5.4
@@ -107,7 +103,6 @@ typing_extensions==4.15.0
 tzdata==2025.3
 urllib3==2.6.2
 uvicorn==0.40.0
-watchdog==6.0.0
 wcwidth==0.2.14
 Werkzeug==3.1.4
 wheel==0.45.1
